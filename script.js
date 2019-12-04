@@ -13,7 +13,8 @@ const options = {
     lat: 0,
     lng: 0,
     zoom: 4,
-    style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+    // style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+    style: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png" // Dark map style
 }
 
 function setup() {
@@ -37,10 +38,7 @@ function setup() {
 
 }
 
-function draw() {
-
-
-}
+function draw() {}
 
 function drawPoint() {
     // Clear the canvas
