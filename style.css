@@ -72,8 +72,8 @@
 
 @font-face {
     font-family: 'lackregular';
-    src: url('lack-regular-Lack.woff2') format('woff2'),
-         url('lack-regular-Lack.woff') format('woff');
+    src: url('fonts/lack/Lack-Regular.woff2') format('woff2'),
+         url('fonts/lack/Lack-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
