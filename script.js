@@ -45,11 +45,11 @@ function setup() {
     // Only redraw the meteorites when the map position changes and not every frame
     // myMap.onChange(drawMeteorites);
 
-    // Only redraw the meteorites when the map position changes and not every frame
-    myMap.onChange(drawPoint);
+    // Only redraw the sites when the map position changes and not every frame
+    myMap.onChange(drawMills);
+    myMap.onChange(drawMonuments);
 
-    // Add a color to our ellipse
-    fill(200, 100, 100);
+
 
 }
 
@@ -58,11 +58,8 @@ function draw() {}
 function drawPoint() {
     // Clear the canvas
     clear();
-
-    // // Get the canvas position for the latitude and longitude of Nigeria
-    // const nigeria = myMap.latLngToPixel(11.396396, 5.076543);
-    // // Using that position, draw an ellipse
-    // ellipse(nigeria.x, nigeria.y, 20, 20);
+    // Add a color to our ellipse
+    fill(200, 100, 100);
 
     // Get the canvas position for the latitude and longitude of Providence Rhode Island
     const providence = myMap.latLngToPixel(41.825995, -71.407743);
@@ -70,41 +67,47 @@ function drawPoint() {
     ellipse(providence.x, providence.y, 20, 20);
 }
 
-function drawMeteorites() {
+function drawMills() {
     // Clear Canvas
     clear();
+    // Add a color to our ellipse
+    fill(200, 100, 100);
 
-    for (let i=0; i<meteorites.getRowCount(); i++) {
+    for (let i=0; i<mills.getRowCount(); i++) {
         // Get the lat/lng of each meteorite
-        const latitude = Number(meteorites.getString(i, 'reclat'));
-        const longitude = Number(meteorites.getString(i, 'reclong'));
+        const latitude = Number(mills.getString(i, 'Latitude'));
+        const longitude = Number(mills.getString(i, 'Longitude'));
 
-        /* Only draw the meteorites if the position is inside the current map bounds. We use a Leaflet mehtod to check if the lat and lng are contained inside the current map. This way we draw just what we are going to see and not everything. See getBounds() in http://lefletjs.com/reference-1.1.0.html */
+        /* Only draw the sites if the position is inside the current map bounds. We use a Leaflet method to check if the lat and lng are contained inside the current map. This way we draw just what we are going to see and not everything. See getBounds() in http://lefletjs.com/reference-1.1.0.html */
         if (myMap.map.getBounds().contains({lat: latitude, lng: longitude})) {
             const pos = myMap.latLngToPixel(latitude, longitude);
             // Get the size of the meteorite and map it. 60000000 is the mass of the largest meteorite
-            let size = meteorites.getString(i, 'mass (g)');
-            size = map(size, 558, 60000000, 1, 25) + myMap.zoom();
+            // let size = mills.getString(i, 'mass (g)');
+            // size = map(size, 558, 60000000, 1, 25) + myMap.zoom();
+            let size = 20;
             ellipse(pos.x, pos.y, size, size);
         }
     }
 }
 
-function drawMeteorites() {
+function drawMonuments() {
     // Clear Canvas
-    clear();
+    // clear();
 
-    for (let i=0; i<meteorites.getRowCount(); i++) {
+    // Add a color to our ellipse
+    fill(100, 100, 200);
+    for (let i=0; i<monuments.getRowCount(); i++) {
         // Get the lat/lng of each meteorite
-        const latitude = Number(meteorites.getString(i, 'reclat'));
-        const longitude = Number(meteorites.getString(i, 'reclong'));
+        const latitude = Number(monuments.getString(i, 'Latitude'));
+        const longitude = Number(monuments.getString(i, 'Longitude'));
 
-        /* Only draw the meteorites if the position is inside the current map bounds. We use a Leaflet mehtod to check if the lat and lng are contained inside the current map. This way we draw just what we are going to see and not everything. See getBounds() in http://lefletjs.com/reference-1.1.0.html */
+        /* Only draw the sites if the position is inside the current map bounds. We use a Leaflet method to check if the lat and lng are contained inside the current map. This way we draw just what we are going to see and not everything. See getBounds() in http://lefletjs.com/reference-1.1.0.html */
         if (myMap.map.getBounds().contains({lat: latitude, lng: longitude})) {
             const pos = myMap.latLngToPixel(latitude, longitude);
             // Get the size of the meteorite and map it. 60000000 is the mass of the largest meteorite
-            let size = meteorites.getString(i, 'mass (g)');
-            size = map(size, 558, 60000000, 1, 25) + myMap.zoom();
+            // let size = mills.getString(i, 'mass (g)');
+            // size = map(size, 558, 60000000, 1, 25) + myMap.zoom();
+            let size = 20;
             ellipse(pos.x, pos.y, size, size);
         }
     }
