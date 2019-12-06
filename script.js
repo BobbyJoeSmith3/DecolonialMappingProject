@@ -4,9 +4,15 @@ let myMap;
 let canvas;
 // Create a variable to hold Meteorite Data
 let meteorites;
+// Create variable to hold Mill Data
+let mills;
+// Create variable to hold Monument data
+let monuments;
 
 // Create a new Mappa instance using Leaflet
 const mappa = new Mappa("Leaflet");
+
+// Calculate grid
 
 // Put all of the map options in a single object
 const options = {
@@ -18,8 +24,9 @@ const options = {
 }
 
 function setup() {
-    canvas = createCanvas(640, 640);
-    // background(100);
+    canvas = createCanvas(windowWidth/4, windowHeight/2);
+    // place canvas in the appropriate grid section
+    canvas.parent('map_A');
 
     // Create a tile map with the options defined above
     myMap = mappa.tileMap(options);

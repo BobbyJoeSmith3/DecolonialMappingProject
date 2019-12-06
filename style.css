@@ -1,4 +1,130 @@
+@font-face {
+    font-family: 'resistanceregular';
+    src: url('fonts/resistance/resistance_generale-webfont.eot');
+    src: url('fonts/resistance/resistance_generale-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/resistance/resistance_generale-webfont.woff2') format('woff2'),
+         url('fonts/resistance/resistance_generale-webfont.woff') format('woff'),
+         url('fonts/resistance/resistance_generale-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'steps-monomono_thin';
+    src: url('fonts/steps/steps-mono-thin-webfont.woff2') format('woff2'),
+         url('fonts/steps/steps-mono-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'steps-monoregular';
+    src: url('fonts/steps/steps-mono-webfont.woff2') format('woff2'),
+         url('fonts/steps/steps-mono-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'tiny20';
+    src: url('fonts/tiny/TINY5x3-20.woff2') format('woff2'),
+         url('fonts/tiny/TINY5x3-20.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tiny40';
+    src: url('fonts/tiny/TINY5x3-40.woff2') format('woff2'),
+         url('fonts/tiny/TINY5x3-40.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lackitalic';
+    src: url('lack-italic-Lack.woff2') format('woff2'),
+         url('lack-italic-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*  */
+@font-face {
+    font-family: 'lack_lineitalic';
+    src: url('lack-line-italic-Lack.woff2') format('woff2'),
+         url('lack-line-italic-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'lack_lineregular';
+    src: url('lack-line-regular-Lack.woff2') format('woff2'),
+         url('lack-line-regular-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'lackregular';
+    src: url('lack-regular-Lack.woff2') format('woff2'),
+         url('lack-regular-Lack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.grid {
+    padding: 1em;
+    display: grid;
+    grid-template-rows: [row1-start] 5vh [row1-end row2-start] 1fr [row2-end row3-start] 1fr [row3-end];
+    grid-template-columns: [col1-start] 25vw [col1-end col2-start] 25vw [col2-end col3-start] 25vw [col3-end col4-start] 25vw [col4-end];
+    grid-gap: 1em 1em;
+    // nick puckett angela's husband
+}
+
+.title {
+    grid-column: col1-start / col2-end;
+    grid-row: row1-start / row1-end;
+}
+
+.map_A {
+    grid-column: col1-start / col1-end;
+    grid-row: row2-start / row2-end;
+}
+
+.monument_A {
+    grid-column: col1-start / col1-end;
+    grid-row: row3-start / row3-end;
+}
+
+.research_A {
+    grid-column: col2-start / col2-end;
+    grid-row: row2-start / row4-end;
+}
+
+h1 {
+    font-family: resistanceregular;
+}
+h2 {
+    font-family: resistanceregular;
+}
+h3 {
+    font-family: tiny20;
+}
+h4 {
+    font-family: tiny40;
+}
 p {
-    font-family: Helvetica;
+    font-family: lackregular;
     color: blue;
 }
